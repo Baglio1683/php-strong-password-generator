@@ -1,6 +1,6 @@
 <?php
 
-$length_number = $_GET["numb"];
+$length_number = $_GET["numb"] ?? "";
 
 if (empty($length_number)) {
     echo 'Nessun numero inserito';
