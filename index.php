@@ -21,7 +21,9 @@
     </form>
 
     <?php
-    include_once __DIR__ . "/function.php";
+
+    include_once __DIR__ . "/password_page.php";
+
     ?>
 
 </body>

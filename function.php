@@ -1,10 +1,15 @@
 <?php
+session_start();
 
 $length_number = $_GET["numb"] ?? "";
 
+
 if (empty($length_number)) {
-    echo 'Nessun numero inserito';
+    $_SESSION["pass_key"] = 'Nessun numero inserito';
     return;
+} else {
+    $passkey = generate_password($length_number);
+    $_SESSION["pass_key"] = $passkey;
 }
 
 function generate_password($numb)
@@ -18,8 +23,5 @@ function generate_password($numb)
     }
     return implode($pass); //turn the array into a string
 }
-
-$passkey = generate_password($length_number);
-echo $passkey;
 
 ?>
