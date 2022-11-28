@@ -1,27 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-
-$length_number = $_GET["numb"];
-
-function generate_password($numb)
-{
-    $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-    $pass = array(); //remember to declare $pass as an array
-    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
-    for ($i = 0; $i < $numb; $i++) {
-        $n = rand(0, $alphaLength);
-        $pass[] = $alphabet[$n];
-    }
-    return implode($pass); //turn the array into a string
-}
-
-
-
-
-?>
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,16 +21,8 @@ function generate_password($numb)
     </form>
 
     <?php
-
-    $passkey = generate_password($length_number);
-    echo $passkey;
-
+    include_once __DIR__ . "/function.php";
     ?>
-
-
-
-
-
 
 </body>
 
